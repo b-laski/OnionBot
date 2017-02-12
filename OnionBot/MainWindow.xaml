@@ -15,9 +15,10 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="24"/>
+            <RowDefinition Height="56"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="{DynamicResource PrimaryHueMidBrush}" MouseMove="Grid_MouseMove">
+        <Grid Grid.Row="0" Background="{DynamicResource PrimaryHueDarkBrush}" MouseMove="Grid_MouseMove">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
                 <material:PackIcon Kind="Earth"  VerticalAlignment="Center" Margin="8,0,0,0" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"/>
                 <TextBlock Text="OnionBot" Margin="5,0,0,0" FontFamily="Roboto" FontWeight="Bold" VerticalAlignment="Center" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"/>
@@ -33,6 +34,22 @@
                     <material:PackIcon Kind="Close" />
                 </Button>
             </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="{DynamicResource PrimaryHueMidBrush}" Effect="{DynamicResource MaterialDesignShadowDepth2}">
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="{DynamicResource MaterialDesignChipBackground}">
+                <!--MENU HERE!!!-->
+                <Button>
+                    
+                </Button>
+            </Grid>
         </Grid>
 
     </Grid>
