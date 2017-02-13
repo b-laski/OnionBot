@@ -6,12 +6,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:OnionBot"
+        xmlns:menus="clr-namespace:OnionBot.UserControls.Menu"
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStyle="None"
         Margin="0"
         Padding="0"
-        Title="MainWindow" Height="500" Width="1000">
+        Title="MainWindow" Height="550" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="24"/>
@@ -31,12 +32,15 @@
                     <material:PackIcon x:Name="maxIcon" Kind="WindowMaximize" />
                 </Button>
                 <Button Height="auto" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Style="{DynamicResource MaterialDesignFlatButton}" Click="btnCloseApp_Click">
-                    <material:PackIcon Kind="Close" />
+                    <material:PackIcon Kind="Close" VerticalAlignment="Center" HorizontalAlignment="Center" />
                 </Button>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="1" Background="{DynamicResource PrimaryHueMidBrush}" Effect="{DynamicResource MaterialDesignShadowDepth2}">
+            <Button HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatButton}" >
+                <material:PackIcon Kind="Menu" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"/>
+            </Button>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -46,9 +50,7 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Background="{DynamicResource MaterialDesignChipBackground}">
                 <!--MENU HERE!!!-->
-                <Button>
-                    
-                </Button>
+                <menus:SmallMenu />
             </Grid>
         </Grid>
 
