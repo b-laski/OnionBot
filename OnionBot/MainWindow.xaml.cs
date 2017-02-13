@@ -28,6 +28,8 @@ namespace OnionBot
         }
 
         #region Buttons
+
+        #region MainWindow
         private void btnCloseApp_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(1);
@@ -56,8 +58,40 @@ namespace OnionBot
                 Application.Current.MainWindow.WindowState = WindowState.Minimized;
             }
         }
+        #endregion // mainWindow
 
+        #region NaviBar
+        private void NavigationBar_MenuButtonClick(object sender, UserControls.NavigationBar.MenuButton e)
+        {
+            if (e == UserControls.NavigationBar.MenuButton.Open)
+            {
+                smallMenu.openMenu();
+            }
+            else
+            {
+                smallMenu.closeMenu();
+            }
+        }
+        #endregion //NaviBar
 
+        #region MenuButtons
+        private void smallMenu_MenuButtons(object sender, UserControls.Menu.SmallMenu.MenuList e)
+        {
+            foreach (Control item in panelUserControl.Children) //Jak bedziesz dodawal nowe opcje do grida, ten kod automatycznie je bedzie wylaczal jak bedziesz wlaczal nowe opcje
+            {
+                item.Visibility = Visibility.Collapsed;
+            }
+
+            //zostaje ci tylko dodac nowa opcje/windowa tutaj, chyba dosyc proste co? ez
+            if (e == UserControls.Menu.SmallMenu.MenuList.chat) chatControl.Visibility = Visibility.Visible;
+            else if (e == UserControls.Menu.SmallMenu.MenuList.dashboard) DashboardControl.Visibility = Visibility.Visible;
+            else if (e == UserControls.Menu.SmallMenu.MenuList.giveaway) DashboardControl.Visibility = Visibility.Visible;
+            else if (e == UserControls.Menu.SmallMenu.MenuList.songrequest) SongrequestControl.Visibility = Visibility.Visible;
+            else if (e == UserControls.Menu.SmallMenu.MenuList.settings) SettingsControl.Visibility = Visibility.Visible;
+        }
+        #endregion //MenuButtons
         #endregion
+
+
     }
 }

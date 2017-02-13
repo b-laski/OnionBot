@@ -6,12 +6,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:OnionBot"
+        xmlns:menus="clr-namespace:OnionBot.UserControls.Menu"
+        xmlns:userControls="clr-namespace:OnionBot.UserControls"
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStyle="None"
         Margin="0"
         Padding="0"
-        Title="MainWindow" Height="500" Width="1000">
+        Title="MainWindow" Height="550" Width="1000">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="24"/>
@@ -31,12 +34,13 @@
                     <material:PackIcon x:Name="maxIcon" Kind="WindowMaximize" />
                 </Button>
                 <Button Height="auto" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Style="{DynamicResource MaterialDesignFlatButton}" Click="btnCloseApp_Click">
-                    <material:PackIcon Kind="Close" />
+                    <material:PackIcon Kind="Close" VerticalAlignment="Center" HorizontalAlignment="Center" />
                 </Button>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="1" Background="{DynamicResource PrimaryHueMidBrush}" Effect="{DynamicResource MaterialDesignShadowDepth2}">
+            <userControls:NavigationBar MenuButtonClick="NavigationBar_MenuButtonClick"/>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -44,11 +48,19 @@
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" Background="{DynamicResource MaterialDesignChipBackground}">
+            <Grid Grid.Column="0" Background="{DynamicResource MaterialDesignChipBackground}" >
                 <!--MENU HERE!!!-->
-                <Button>
-                    
-                </Button>
+                <StackPanel Orientation="Horizontal" >
+                    <menus:SmallMenu x:Name="smallMenu" HorizontalAlignment="Left" MenuButtons="smallMenu_MenuButtons"/>
+                    <Separator Width="2" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" x:Name="panelUserControl">
+                <userControls:Chat x:Name="chatControl" Visibility="Visible" />
+                <userControls:Dashboard x:Name="DashboardControl" Visibility="Collapsed" />
+                <userControls:Giveaway x:Name="GiveawayControl" Visibility="Collapsed" />
+                <userControls:Songrequest x:Name="SongrequestControl" Visibility="Collapsed" />
+                <userControls:Settings x:Name="SettingsControl" Visibility="Collapsed" />
             </Grid>
         </Grid>
 
