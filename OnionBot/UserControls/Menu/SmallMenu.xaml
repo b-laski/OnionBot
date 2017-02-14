@@ -69,7 +69,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <material:PackIcon Grid.Column="0" Kind="Settings" Margin="12,0,0,0" Width="24" Height="24" />
-                    <TextBlock x:Name="settingsTextBlock" Grid.Column="1" Text="Songrequest" Margin="24,0,0,0" Visibility="Collapsed" />
+                    <TextBlock x:Name="settingsTextBlock" Grid.Column="1" Text="Settings" Margin="24,0,0,0" Visibility="Collapsed" />
                 </Grid>
             </Button>
         </StackPanel>

@@ -77,17 +77,32 @@ namespace OnionBot
         #region MenuButtons
         private void smallMenu_MenuButtons(object sender, UserControls.Menu.SmallMenu.MenuList e)
         {
-            foreach (Control item in panelUserControl.Children) //Jak bedziesz dodawal nowe opcje do grida, ten kod automatycznie je bedzie wylaczal jak bedziesz wlaczal nowe opcje
+            foreach (Control item in panelUserControl.Children)
             {
                 item.Visibility = Visibility.Collapsed;
             }
 
-            //zostaje ci tylko dodac nowa opcje/windowa tutaj, chyba dosyc proste co? ez
-            if (e == UserControls.Menu.SmallMenu.MenuList.chat) chatControl.Visibility = Visibility.Visible;
-            else if (e == UserControls.Menu.SmallMenu.MenuList.dashboard) DashboardControl.Visibility = Visibility.Visible;
-            else if (e == UserControls.Menu.SmallMenu.MenuList.giveaway) DashboardControl.Visibility = Visibility.Visible;
-            else if (e == UserControls.Menu.SmallMenu.MenuList.songrequest) SongrequestControl.Visibility = Visibility.Visible;
-            else if (e == UserControls.Menu.SmallMenu.MenuList.settings) SettingsControl.Visibility = Visibility.Visible;
+            naviBar.menuPlace(e);
+            if (e == UserControls.Menu.SmallMenu.MenuList.chat)
+            {
+                chatControl.Visibility = Visibility.Visible;
+            }
+            else if (e == UserControls.Menu.SmallMenu.MenuList.dashboard)
+            {
+                DashboardControl.Visibility = Visibility.Visible;
+            }
+            else if (e == UserControls.Menu.SmallMenu.MenuList.giveaway)
+            {
+                DashboardControl.Visibility = Visibility.Visible;
+            }
+            else if (e == UserControls.Menu.SmallMenu.MenuList.songrequest)
+            {
+                SongrequestControl.Visibility = Visibility.Visible;
+            }
+            else if (e == UserControls.Menu.SmallMenu.MenuList.settings)
+            {
+                SettingsControl.Visibility = Visibility.Visible;
+            }
         }
         #endregion //MenuButtons
 

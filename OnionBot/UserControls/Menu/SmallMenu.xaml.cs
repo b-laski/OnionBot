@@ -28,6 +28,7 @@ namespace OnionBot.UserControls.Menu
         {
             InitializeComponent();
 
+            btnChat.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             btnChat.AddHandler(FrameworkElement.MouseDownEvent, new MouseButtonEventHandler(btnChat_MouseDown), true);
             btnDashboard.AddHandler(FrameworkElement.MouseDownEvent, new MouseButtonEventHandler(btnDashboard_MouseDown), true);
             btnGiveaway.AddHandler(FrameworkElement.MouseDownEvent, new MouseButtonEventHandler(btnGiveaway_MouseDown), true);
@@ -64,6 +65,15 @@ namespace OnionBot.UserControls.Menu
             settingsTextBlock.Visibility = Visibility.Collapsed;
         }
 
+        private void resetButton()
+        {
+            foreach(Button item in pnlMenu.Children)
+            {
+                var bc = new BrushConverter();
+                item.Foreground = (Brush)bc.ConvertFrom("#616161");
+            }
+        }
+
         private void ShowHideMenu(string Storyboard, StackPanel pnl)
         {
             Storyboard sb = (Storyboard)this.Resources[Storyboard] as Storyboard;
@@ -76,6 +86,8 @@ namespace OnionBot.UserControls.Menu
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 MenuButtons?.Invoke(this, MenuList.chat);
+                resetButton();
+                btnChat.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             }
 
         }
@@ -85,6 +97,8 @@ namespace OnionBot.UserControls.Menu
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 MenuButtons?.Invoke(this, MenuList.dashboard);
+                resetButton();
+                btnDashboard.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             }
         }
 
@@ -93,6 +107,8 @@ namespace OnionBot.UserControls.Menu
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 MenuButtons?.Invoke(this, MenuList.giveaway);
+                resetButton();
+                btnGiveaway.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             }
         }
 
@@ -101,6 +117,8 @@ namespace OnionBot.UserControls.Menu
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 MenuButtons?.Invoke(this, MenuList.songrequest);
+                resetButton();
+                btnSongrequest.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             }
         }
 
@@ -109,6 +127,8 @@ namespace OnionBot.UserControls.Menu
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 MenuButtons?.Invoke(this, MenuList.settings);
+                resetButton();
+                btnSettings.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             }
         }
         #endregion // buttons

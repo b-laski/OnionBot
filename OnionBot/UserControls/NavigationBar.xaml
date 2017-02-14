@@ -21,8 +21,12 @@
             </Button>
         </Grid>
 
-        <Grid Grid.Column="1">
-            <TextBlock Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Chat" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22"/>
+        <Grid x:Name="gridControlNames" Grid.Column="1">
+            <TextBlock x:Name="chatBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Chat" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Visible" />
+            <TextBlock x:Name="dashboardBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Dashboard" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
+            <TextBlock x:Name="giveawayBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Giveaway" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
+            <TextBlock x:Name="songrequestBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Songrequest" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
+            <TextBlock x:Name="settingsBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Settings" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
         </Grid>
     </Grid>
 </UserControl>

@@ -40,7 +40,7 @@
         </Grid>
 
         <Grid Grid.Row="1" Background="{DynamicResource PrimaryHueMidBrush}" Effect="{DynamicResource MaterialDesignShadowDepth2}">
-            <userControls:NavigationBar MenuButtonClick="NavigationBar_MenuButtonClick"/>
+            <userControls:NavigationBar x:Name="naviBar" MenuButtonClick="NavigationBar_MenuButtonClick"/>
         </Grid>
 
         <Grid Grid.Row="2">
