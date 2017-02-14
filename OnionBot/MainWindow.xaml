@@ -7,14 +7,20 @@
         xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:OnionBot"
         xmlns:menus="clr-namespace:OnionBot.UserControls.Menu"
+<<<<<<< HEAD
         xmlns:userControls="clr-namespace:OnionBot.UserControls"
+=======
+>>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStyle="None"
         Margin="0"
         Padding="0"
         Title="MainWindow" Height="550" Width="1000">
+<<<<<<< HEAD
     
+=======
+>>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="24"/>
@@ -40,7 +46,13 @@
         </Grid>
 
         <Grid Grid.Row="1" Background="{DynamicResource PrimaryHueMidBrush}" Effect="{DynamicResource MaterialDesignShadowDepth2}">
+<<<<<<< HEAD
             <userControls:NavigationBar MenuButtonClick="NavigationBar_MenuButtonClick"/>
+=======
+            <Button HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatButton}" >
+                <material:PackIcon Kind="Menu" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"/>
+            </Button>
+>>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
         </Grid>
 
         <Grid Grid.Row="2">
@@ -50,6 +62,7 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Background="{DynamicResource MaterialDesignChipBackground}" >
                 <!--MENU HERE!!!-->
+<<<<<<< HEAD
                 <StackPanel Orientation="Horizontal" >
                     <menus:SmallMenu x:Name="smallMenu" HorizontalAlignment="Left" MenuButtons="smallMenu_MenuButtons"/>
                     <Separator Width="2" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
@@ -61,6 +74,9 @@
                 <userControls:Giveaway x:Name="GiveawayControl" Visibility="Collapsed" />
                 <userControls:Songrequest x:Name="SongrequestControl" Visibility="Collapsed" />
                 <userControls:Settings x:Name="SettingsControl" Visibility="Collapsed" />
+=======
+                <menus:SmallMenu />
+>>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
             </Grid>
         </Grid>
 
