@@ -12,10 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-<<<<<<< HEAD
 using System.Windows.Media.Animation;
-=======
->>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
 
 namespace OnionBot.UserControls.Menu
 {
@@ -24,7 +21,6 @@ namespace OnionBot.UserControls.Menu
     /// </summary>
     public partial class SmallMenu : UserControl
     {
-<<<<<<< HEAD
         public delegate void MenuEventHundler(object sender, MenuList e);
         public event MenuEventHundler MenuButtons;
 
@@ -77,11 +73,11 @@ namespace OnionBot.UserControls.Menu
         #region Buttons
         private void btnChat_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 MenuButtons?.Invoke(this, MenuList.chat);
             }
-            
+
         }
 
         private void btnDashboard_MouseDown(object sender, MouseButtonEventArgs e)
@@ -125,12 +121,5 @@ namespace OnionBot.UserControls.Menu
             songrequest,
             settings
         }
-
-=======
-        public SmallMenu()
-        {
-            InitializeComponent();
-        }
->>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
     }
 }

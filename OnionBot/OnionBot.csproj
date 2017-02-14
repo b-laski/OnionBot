@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CED8DB1D-FF75-47EE-8DF8-86F7217A7CD3}</ProjectGuid>
+    <ProjectGuid>{28DCDD64-0978-4935-B354-7AB0187EF393}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OnionBot</RootNamespace>
@@ -63,7 +63,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-<<<<<<< HEAD
     <Compile Include="UserControls\Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
@@ -72,15 +71,10 @@
     </Compile>
     <Compile Include="UserControls\Giveaway.xaml.cs">
       <DependentUpon>Giveaway.xaml</DependentUpon>
-=======
-    <Compile Include="UserControls\Menu\SliderMenu.xaml.cs">
-      <DependentUpon>SliderMenu.xaml</DependentUpon>
->>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
     </Compile>
     <Compile Include="UserControls\Menu\SmallMenu.xaml.cs">
       <DependentUpon>SmallMenu.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="UserControls\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
@@ -90,8 +84,6 @@
     <Compile Include="UserControls\Songrequest.xaml.cs">
       <DependentUpon>Songrequest.xaml</DependentUpon>
     </Compile>
-=======
->>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,7 +96,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-<<<<<<< HEAD
     <Page Include="UserControls\Chat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,9 +105,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Giveaway.xaml">
-=======
-    <Page Include="UserControls\Menu\SliderMenu.xaml">
->>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,7 +112,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-<<<<<<< HEAD
     <Page Include="UserControls\NavigationBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,8 +124,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-=======
->>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -168,7 +153,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

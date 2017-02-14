@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:OnionBot.UserControls.Menu"
              xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-<<<<<<< HEAD
              MinHeight="320" MinWidth="56"
              d:DesignHeight="500" d:DesignWidth="56">
 
@@ -72,22 +71,6 @@
                     <material:PackIcon Grid.Column="0" Kind="Settings" Margin="12,0,0,0" Width="24" Height="24" />
                     <TextBlock x:Name="settingsTextBlock" Grid.Column="1" Text="Songrequest" Margin="24,0,0,0" Visibility="Collapsed" />
                 </Grid>
-=======
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <Button Style="{DynamicResource MaterialDesignFlatButton}" Margin="0,8,0,0">
-                <material:PackIcon Kind="wechat" />
-            </Button>
-            <Button Style="{DynamicResource MaterialDesignFlatButton}" Margin="0,8,0,0">
-                <material:PackIcon Kind="BulletinBoard"/>
-            </Button>
-            <Button Style="{DynamicResource MaterialDesignFlatButton}" Margin="0,8,0,0">
-                <material:PackIcon Kind="MusicBox" />
-            </Button>
-            <Button Style="{DynamicResource MaterialDesignFlatButton}" Margin="0,8,0,0">
-                <material:PackIcon Kind="Settings" />
->>>>>>> 868c1f7797cbb145240ef3207edae253bee0b29f
             </Button>
         </StackPanel>
     </Grid>

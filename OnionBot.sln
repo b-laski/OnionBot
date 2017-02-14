@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionBot", "OnionBot\OnionBot.csproj", "{CED8DB1D-FF75-47EE-8DF8-86F7217A7CD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionBot", "OnionBot\OnionBot.csproj", "{28DCDD64-0978-4935-B354-7AB0187EF393}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CED8DB1D-FF75-47EE-8DF8-86F7217A7CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CED8DB1D-FF75-47EE-8DF8-86F7217A7CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CED8DB1D-FF75-47EE-8DF8-86F7217A7CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CED8DB1D-FF75-47EE-8DF8-86F7217A7CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28DCDD64-0978-4935-B354-7AB0187EF393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28DCDD64-0978-4935-B354-7AB0187EF393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28DCDD64-0978-4935-B354-7AB0187EF393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28DCDD64-0978-4935-B354-7AB0187EF393}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

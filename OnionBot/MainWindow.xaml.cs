@@ -37,7 +37,7 @@ namespace OnionBot
 
         private void Grid_MouseMove(object sender, MouseEventArgs e)
         {
-            if(e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
             }
@@ -45,7 +45,7 @@ namespace OnionBot
 
         private void btnMaxiWindow_Click(object sender, MouseButtonEventArgs e)
         {
-            if(e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 Application.Current.MainWindow.WindowState = WindowState.Maximized;
             }
@@ -90,8 +90,7 @@ namespace OnionBot
             else if (e == UserControls.Menu.SmallMenu.MenuList.settings) SettingsControl.Visibility = Visibility.Visible;
         }
         #endregion //MenuButtons
+
         #endregion
-
-
     }
 }
