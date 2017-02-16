@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="OnionBot.UserControls.Usercontrol_Settings.Commends.AddCommend"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OnionBot.UserControls.Usercontrol_Settings.Commends"
+             mc:Ignorable="d" 
+             MinHeight="250" MinWidth="350"
+             d:DesignHeight="250" d:DesignWidth="450">
+    <Border Background="{DynamicResource MaterialDesignPaper}" CornerRadius="2">
+        <Grid Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition  />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="New commend" FontSize="16" FontWeight="Bold" />
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label Content="Commend: " HorizontalAlignment="Left" Margin="0,0,0,8"/>
+                        <Label Content="Permission: " HorizontalAlignment="Left" Margin="0,0,0,8"/>
+                        <Label Content="Status: " HorizontalAlignment="Left" Margin="0,0,0,8"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <TextBox x:Name="nameBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                        <ComboBox Margin="0,0,0,8">
+                            <ComboBoxItem IsSelected="True">Everyone</ComboBoxItem>
+                            <ComboBoxItem>Followers</ComboBoxItem>
+                            <ComboBoxItem>Subscribers</ComboBoxItem>
+                            <ComboBoxItem>Moderators</ComboBoxItem>
+                            <ComboBoxItem>Streamer</ComboBoxItem>
+                        </ComboBox >
+                        <ComboBox Margin="0,0,0,8">
+                            <ComboBoxItem IsSelected="True">Enable</ComboBoxItem>
+                            <ComboBoxItem>Disable</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="btnCancel" Content="CANCEL" Click="btnCancel_Click"/>
+                <Button Grid.Column="2" x:Name="btnAdd" Content="ADD" Click="btnAdd_Click"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Artefact">
+      <HintPath>C:\Users\tajfu\Desktop\OnionBot_UserControls\OnionBot_UserControls\Artefact.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
       <Private>True</Private>
@@ -55,6 +58,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Utilities">
+      <HintPath>C:\Users\tajfu\Desktop\OnionBot_UserControls\OnionBot_UserControls\Utilities.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -85,6 +91,27 @@
     </Compile>
     <Compile Include="UserControls\Songrequest.xaml.cs">
       <DependentUpon>Songrequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Usercontrol_Settings\Account\AccountForm.xaml.cs">
+      <DependentUpon>AccountForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Usercontrol_Settings\Colors\ColorsForm.xaml.cs">
+      <DependentUpon>ColorsForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Usercontrol_Settings\Commends\AddCommend.xaml.cs">
+      <DependentUpon>AddCommend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Usercontrol_Settings\Commends\CommendsForm.xaml.cs">
+      <DependentUpon>CommendsForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Usercontrol_Settings\SettingsButtons.xaml.cs">
+      <DependentUpon>SettingsButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Usercontrol_Settings\SFX\SFXForm.xaml.cs">
+      <DependentUpon>SFXForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Usercontrol_Settings\Timers\TimerForm.xaml.cs">
+      <DependentUpon>TimerForm.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -126,6 +153,34 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\Usercontrol_Settings\Account\AccountForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Usercontrol_Settings\Colors\ColorsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Usercontrol_Settings\Commends\AddCommend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Usercontrol_Settings\Commends\CommendsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Usercontrol_Settings\SettingsButtons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Usercontrol_Settings\SFX\SFXForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Usercontrol_Settings\Timers\TimerForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -156,7 +211,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UserControls\Usercontrol_Settings\" />
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

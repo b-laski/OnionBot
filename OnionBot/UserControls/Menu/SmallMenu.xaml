@@ -7,21 +7,10 @@
              xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              MinHeight="320" MinWidth="56"
+             MaxWidth="200"
              d:DesignHeight="500" d:DesignWidth="56">
-
-    <UserControl.Resources>
-        <Storyboard x:Key="showMenu">
-            <DoubleAnimation Storyboard.TargetProperty="Width" From="56" To="200" DecelerationRatio=".9" Duration="0:0:1" />
-        </Storyboard>
-
-        <Storyboard x:Key="hideMenu">
-            <DoubleAnimation Storyboard.TargetProperty="Width" From="200" To="56" DecelerationRatio=".9" Duration="0:0:1" />
-        </Storyboard>
-
-    </UserControl.Resources>
-
-    <Grid>
-        <StackPanel Panel.ZIndex="2" x:Name="pnlMenu" Orientation="Vertical">
+    <Grid x:Name="pnlMenu">
+        <StackPanel Panel.ZIndex="2" x:Name="pnlButtonMenu" Orientation="Vertical">
             <Button x:Name="btnChat" Style="{DynamicResource MaterialDesignToolButton}" HorizontalContentAlignment="Left" Margin="0,8,0,0" Height="56" MouseDown="btnChat_MouseDown">
                 <Grid>
                     <Grid.ColumnDefinitions>

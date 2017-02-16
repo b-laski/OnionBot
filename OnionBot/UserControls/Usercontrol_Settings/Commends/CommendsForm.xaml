@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="OnionBot.UserControls.Usercontrol_Settings.Commends.CommendsForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OnionBot.UserControls.Usercontrol_Settings.Commends"
+             xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="12,6,6,6">
+                <TextBlock Text="Commends" VerticalAlignment="Center" Foreground="{DynamicResource PrimaryHueMidBrush}" FontWeight="Bold" />
+                <Button x:Name="btnNewCommend" HorizontalAlignment="Right" VerticalAlignment="Center" Width="36" Foreground="{DynamicResource PrimaryHueMidBrush}" Style="{DynamicResource MaterialDesignToolButton}" Click="btnNewCommend_Click">
+                    <material:PackIcon Kind="Plus" />
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Margin="6">
+            <DataGrid x:Name="commendsTable" AutoGenerateColumns="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        </Grid>
+    </Grid>
+</UserControl>

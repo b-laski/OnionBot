@@ -61,15 +61,15 @@ namespace OnionBot
         #endregion // mainWindow
 
         #region NaviBar
-        private void NavigationBar_MenuButtonClick(object sender, UserControls.NavigationBar.MenuButton e)
+        private void NavigationBar_MenuButtonClick(object sender, EventArgs e)
         {
-            if (e == UserControls.NavigationBar.MenuButton.Open)
-            {
-                smallMenu.openMenu();
-            }
-            else
+            if (smallMenu.isMenuVisible == true)
             {
                 smallMenu.closeMenu();
+            }
+            else if(smallMenu.isMenuVisible == false)
+            {
+                smallMenu.openMenu();
             }
         }
         #endregion //NaviBar
@@ -83,26 +83,11 @@ namespace OnionBot
             }
 
             naviBar.menuPlace(e);
-            if (e == UserControls.Menu.SmallMenu.MenuList.chat)
-            {
-                chatControl.Visibility = Visibility.Visible;
-            }
-            else if (e == UserControls.Menu.SmallMenu.MenuList.dashboard)
-            {
-                DashboardControl.Visibility = Visibility.Visible;
-            }
-            else if (e == UserControls.Menu.SmallMenu.MenuList.giveaway)
-            {
-                DashboardControl.Visibility = Visibility.Visible;
-            }
-            else if (e == UserControls.Menu.SmallMenu.MenuList.songrequest)
-            {
-                SongrequestControl.Visibility = Visibility.Visible;
-            }
-            else if (e == UserControls.Menu.SmallMenu.MenuList.settings)
-            {
-                SettingsControl.Visibility = Visibility.Visible;
-            }
+            if (e == UserControls.Menu.SmallMenu.MenuList.chat) { chatControl.Visibility = Visibility.Visible; }
+            else if (e == UserControls.Menu.SmallMenu.MenuList.dashboard) { DashboardControl.Visibility = Visibility.Visible; }
+            else if (e == UserControls.Menu.SmallMenu.MenuList.giveaway) { DashboardControl.Visibility = Visibility.Visible; }
+            else if (e == UserControls.Menu.SmallMenu.MenuList.songrequest) { SongrequestControl.Visibility = Visibility.Visible; }
+            else if (e == UserControls.Menu.SmallMenu.MenuList.settings) { SettingsControl.Visibility = Visibility.Visible; }
         }
         #endregion //MenuButtons
 

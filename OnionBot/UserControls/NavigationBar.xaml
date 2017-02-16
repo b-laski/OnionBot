@@ -10,23 +10,27 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <Button x:Name="btnOpenMenu" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignToolButton}" Margin="12,0,0,0" Visibility="Visible" Click="openMenu_Click">
-                <material:PackIcon Kind="Menu" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Width="24" Height="24"/>
-            </Button>
-            <Button x:Name="btnCloseMenu" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignToolButton}" Margin="12,0,0,0" Visibility="Collapsed" Click="closeMenu_Click">
+            <Button x:Name="btnMenu" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignToolButton}" Margin="12,0,0,0" Visibility="Visible" Click="btnMenu_Click">
                 <material:PackIcon Kind="Menu" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Width="24" Height="24"/>
             </Button>
         </Grid>
 
         <Grid x:Name="gridControlNames" Grid.Column="1">
-            <TextBlock x:Name="chatBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Chat" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Visible" />
-            <TextBlock x:Name="dashboardBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Dashboard" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
-            <TextBlock x:Name="giveawayBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Giveaway" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
-            <TextBlock x:Name="songrequestBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Songrequest" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
-            <TextBlock x:Name="settingsBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Settings" VerticalAlignment="Center" Margin="32,0,0,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
+            <TextBlock x:Name="chatBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Chat" VerticalAlignment="Center" Margin="32,0,16,0" FontFamily="Roboto" FontSize="22" Visibility="Visible" />
+            <TextBlock x:Name="dashboardBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Dashboard" VerticalAlignment="Center" Margin="32,0,16,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
+            <TextBlock x:Name="giveawayBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Giveaway" VerticalAlignment="Center" Margin="32,0,16,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
+            <TextBlock x:Name="songrequestBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Songrequest" VerticalAlignment="Center" Margin="32,0,16,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
+            <TextBlock x:Name="settingsBlock" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="Settings" VerticalAlignment="Center" Margin="32,0,16,0" FontFamily="Roboto" FontSize="22" Visibility="Collapsed"/>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Button x:Name="btnMoreOption" HorizontalAlignment="Right" Style="{DynamicResource MaterialDesignToolButton}" Margin="12,0,12,0" Visibility="Visible">
+                <material:PackIcon Kind="DotsVertical" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Width="24" Height="24"/>
+            </Button>
         </Grid>
     </Grid>
 </UserControl>

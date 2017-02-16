@@ -24,5 +24,31 @@ namespace OnionBot.UserControls
         {
             InitializeComponent();
         }
+
+        private void btnAddCommend_ButtonClick(object sender, EventArgs e)
+        {
+            addCommendForm.Visibility = Visibility.Visible;
+        }
+
+        private void addCommends_ButtonClick(object sender, Usercontrol_Settings.Commends.AddCommend.SelectedButton e)
+        {
+            if (e == Usercontrol_Settings.Commends.AddCommend.SelectedButton.Add) { addCommendForm.Visibility = Visibility.Collapsed; }
+            else if (e == Usercontrol_Settings.Commends.AddCommend.SelectedButton.Cancel) { addCommendForm.Visibility = Visibility.Collapsed; }
+        }
+
+        private void settingsList_SettingMenuButtonClick(object sender, Usercontrol_Settings.SettingsButtons.SettingMenuButtons e)
+        {
+            foreach(Border item in pnlGridSettings.Children)
+            {
+                item.Visibility = Visibility.Collapsed;
+            }
+
+            if(e == Usercontrol_Settings.SettingsButtons.SettingMenuButtons.Commends) { CommendsForm.Visibility = Visibility.Visible; }
+            else if (e == Usercontrol_Settings.SettingsButtons.SettingMenuButtons.Timers) { TimersForm.Visibility = Visibility.Visible; }
+            else if (e == Usercontrol_Settings.SettingsButtons.SettingMenuButtons.SFX) { SFXForm.Visibility = Visibility.Visible; }
+            else if (e == Usercontrol_Settings.SettingsButtons.SettingMenuButtons.Account) { AccountForm.Visibility = Visibility.Visible; }
+            else if (e == Usercontrol_Settings.SettingsButtons.SettingMenuButtons.Colors) { ColorsForm.Visibility = Visibility.Visible; }
+
+        }
     }
 }

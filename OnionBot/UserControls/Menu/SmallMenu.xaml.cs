@@ -23,10 +23,29 @@ namespace OnionBot.UserControls.Menu
     {
         public delegate void MenuEventHundler(object sender, MenuList e);
         public event MenuEventHundler MenuButtons;
+        public enum MenuList
+        {
+            chat,
+            dashboard,
+            giveaway,
+            songrequest,
+            settings
+        }
+
+        private int targetClosedWidth = 56;
+        private int targetOpenWidth = 200;
+
+
+        public bool? isMenuVisible = false;
 
         public SmallMenu()
         {
             InitializeComponent();
+
+            targetClosedWidth = (int) this.MinWidth;
+            targetOpenWidth = (int) this.MaxWidth;
+
+            pnlMenu.Width = targetClosedWidth;
 
             btnChat.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             btnChat.AddHandler(FrameworkElement.MouseDownEvent, new MouseButtonEventHandler(btnChat_MouseDown), true);
@@ -36,15 +55,16 @@ namespace OnionBot.UserControls.Menu
             btnSettings.AddHandler(FrameworkElement.MouseDownEvent, new MouseButtonEventHandler(btnSettings_MouseDown), true);
         }
 
+        #region AnimationsMenu
         public void openMenu()
         {
-            ShowHideMenu("showMenu", pnlMenu);
             showTextBlocks();
+            ShowMenu(pnlMenu);
         }
 
         public void closeMenu()
         {
-            ShowHideMenu("hideMenu", pnlMenu);
+            HideMenu(pnlMenu);
         }
 
         private void showTextBlocks()
@@ -56,7 +76,7 @@ namespace OnionBot.UserControls.Menu
             settingsTextBlock.Visibility = Visibility.Visible;
         }
 
-        private void closeTextBlocks()
+        private void hideTextBlocks()
         {
             chatTextBlock.Visibility = Visibility.Collapsed;
             dashboardTextBlock.Visibility = Visibility.Collapsed;
@@ -65,20 +85,55 @@ namespace OnionBot.UserControls.Menu
             settingsTextBlock.Visibility = Visibility.Collapsed;
         }
 
+        private void HideMenu(Grid pnl)
+        {
+            isMenuVisible = null;
+            chatTextBlock.Opacity = 1;
+            dashboardTextBlock.Opacity = 1;
+            giveawayTextBlock.Opacity = 1;
+            songrequestTextBlock.Opacity = 1;
+            settingsTextBlock.Opacity = 1;
+            Utilities.Animations.WidthAnimation(pnl, targetClosedWidth, TimeSpan.FromMilliseconds(500), ()=> 
+            {
+                isMenuVisible = false;
+                hideTextBlocks();
+
+            });
+            Utilities.Animations.OpacityAnimation(chatTextBlock, 0, TimeSpan.FromMilliseconds(300));
+            Utilities.Animations.OpacityAnimation(dashboardTextBlock, 0, TimeSpan.FromMilliseconds(300));
+            Utilities.Animations.OpacityAnimation(giveawayTextBlock, 0, TimeSpan.FromMilliseconds(300));
+            Utilities.Animations.OpacityAnimation(songrequestTextBlock, 0, TimeSpan.FromMilliseconds(300));
+            Utilities.Animations.OpacityAnimation(settingsTextBlock, 0, TimeSpan.FromMilliseconds(300));
+        }
+
+        private void ShowMenu(Grid pnl)
+        {
+            isMenuVisible = null;
+            chatTextBlock.Opacity = 0;
+            dashboardTextBlock.Opacity = 0;
+            giveawayTextBlock.Opacity = 0;
+            songrequestTextBlock.Opacity = 0;
+            settingsTextBlock.Opacity = 0;
+            Utilities.Animations.WidthAnimation(pnl, targetOpenWidth, TimeSpan.FromMilliseconds(500), () =>
+            {
+                isMenuVisible = true;
+            });
+            Utilities.Animations.OpacityAnimation(chatTextBlock, 1, TimeSpan.FromMilliseconds(800));
+            Utilities.Animations.OpacityAnimation(dashboardTextBlock, 1, TimeSpan.FromMilliseconds(800));
+            Utilities.Animations.OpacityAnimation(giveawayTextBlock, 1, TimeSpan.FromMilliseconds(800));
+            Utilities.Animations.OpacityAnimation(songrequestTextBlock, 1, TimeSpan.FromMilliseconds(800));
+            Utilities.Animations.OpacityAnimation(settingsTextBlock, 1, TimeSpan.FromMilliseconds(800));
+        }
+
         private void resetButton()
         {
-            foreach(Button item in pnlMenu.Children)
+            foreach(Button item in pnlButtonMenu.Children)
             {
                 var bc = new BrushConverter();
                 item.Foreground = (Brush)bc.ConvertFrom("#616161");
             }
         }
-
-        private void ShowHideMenu(string Storyboard, StackPanel pnl)
-        {
-            Storyboard sb = (Storyboard)this.Resources[Storyboard] as Storyboard;
-            sb.Begin(pnl);
-        }
+        #endregion
 
         #region Buttons
         private void btnChat_MouseDown(object sender, MouseButtonEventArgs e)
@@ -131,15 +186,6 @@ namespace OnionBot.UserControls.Menu
                 btnSettings.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             }
         }
-        #endregion // buttons
-
-        public enum MenuList
-        {
-            chat,
-            dashboard,
-            giveaway,
-            songrequest,
-            settings
-        }
+        #endregion // buttons        
     }
 }
