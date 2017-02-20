@@ -1,0 +1,28 @@
+﻿<Window x:Class="OnionBot.UserControls.Usercontrol_Settings.Account.TwitchLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:OnionBot.UserControls.Usercontrol_Settings.Account"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Margin="0"
+        Padding="0"
+        Title="TwitchLogin" Height="800" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{DynamicResource PrimaryHueDarkBrush}">
+            <Button Height="auto" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right" Click="btnCloseApp_Click">
+                <material:PackIcon Kind="Close" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <WebBrowser HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&amp;client_id=a4a9z3lf5b00it271smlkaxdajvf0un&amp;redirect_uri=http://localhost&amp;scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+channel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login" />
+        </Grid>
+    </Grid>
+</Window>
