@@ -32,5 +32,7 @@ namespace OnionBot.UserControls.Usercontrol_Settings.Account
             TwitchLogin loginWindow = new TwitchLogin();
             loginWindow.Show();
         }
+
+
     }
 }
