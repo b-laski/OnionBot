@@ -24,8 +24,7 @@
             </Border>
             <Grid Grid.Row="1">
                 <Border CornerRadius="1" Margin="6" Background="{DynamicResource MaterialDesignPaper}" Effect="{DynamicResource MaterialDesignShadowDepth1}">
-                    <TextBox Name="textBox" Margin="8" VerticalAlignment="Center">
-                    </TextBox>
+                    <TextBox Name="textBox" Margin="8" VerticalAlignment="Center"/>
                 </Border>
             </Grid>
         </Grid>
