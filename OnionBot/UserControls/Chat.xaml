@@ -18,8 +18,7 @@
             </Grid.RowDefinitions>
             <Border Grid.Row="0" CornerRadius="1" Margin="6" Background="{DynamicResource MaterialDesignPaper}" Effect="{DynamicResource MaterialDesignShadowDepth1}" >
                 <ScrollViewer Name="chatBoxScrollViewer">
-                    <ListBox Name="chatBox">
-                    </ListBox>
+                    <ListBox Name="chatBox"/>
                 </ScrollViewer>
             </Border>
             <Grid Grid.Row="1">

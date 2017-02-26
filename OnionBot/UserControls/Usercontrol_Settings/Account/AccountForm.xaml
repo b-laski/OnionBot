@@ -22,7 +22,7 @@
             </Grid>
         </Grid>
         <Grid x:Name="ConnectGrid" Grid.Row="1" Visibility="Visible">
-            <Button VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnTwitchConnect">
+            <Button VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnTwitchConnect" Visibility="Visible">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />

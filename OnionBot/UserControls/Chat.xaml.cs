@@ -19,6 +19,7 @@ using TwitchLib.Events.Client;
 using TwitchLib.Events.Services;
 using TwitchLib.Extensions.Client;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace OnionBot.UserControls
 {
@@ -33,39 +34,40 @@ namespace OnionBot.UserControls
         public Chat()
         {
             InitializeComponent();
-            CheckConnected();
+            credentials = new ConnectionCredentials("tajfuntest2", "oauth:1c4us8hjq24n385z27f85157m32r8j");
+            client = new TwitchClient(credentials, "tajfun695");
+            client.OnJoinedChannel += onJoinedChannel;
+            //client.OnJoinedChannel += new EventHandler<OnMessageReceivedArgs>();
+            client.OnMessageReceived += new EventHandler<OnMessageReceivedArgs>(globalChatMessageReceived);
+
+            client.Connect();
+            if (client.IsConnected) { chatBox.Items.Add($"Hello I`m {client.TwitchUsername}. I connected to your chat!"); }
+            else { chatBox.Items.Add($"I have problem with connect to your chat!"); }
         }
-
-        public void Refresh()
-        {
-            CheckConnected();
-        }
-
-        private void CheckConnected()
-        {
-            if (Libs.OAuth.OAuthToken == null)
-            {
-                chatBox.Items.Add("First connect your account with bot");
-            }
-            else
-            {
-                credentials = new ConnectionCredentials("tajfun695", Libs.OAuth.OAuthToken);
-                client = new TwitchClient(credentials, "tajfun695");
-                client.OnJoinedChannel += onJoinedChannel;
-                client.OnMessageReceived += OnMessageReceived;
-
-                client.Connect();
-            }
-        }
-
-        private void OnMessageReceived(object sender, OnMessageReceivedArgs e)
-        {
-            chatBox.Items.Add(e.ChatMessage.Username + ": " + e.ChatMessage.Message);
-        }
-
         private void onJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
-            client.SendMessage("Hey guys! I am a bot connected via TwitchLib!");
+            client.SendMessage($"Hey guys! I am a { e.Username} connected via TwitchLib!");
+        }
+        private void globalChatMessageReceived(object sender, OnMessageReceivedArgs e)
+        {
+            ReceiveChatMessage(e.ChatMessage.Username, e.ChatMessage.Badges, e.ChatMessage.ColorHex, e.ChatMessage.Message);
+        }
+
+        private void viewerList(object sender, OnJoinedChannelArgs e)
+        {
+            //e.Username
+        }
+        private void ReceiveChatMessage(string username, List<KeyValuePair<string, string>> badges, string color, string message)
+        {
+                Models.ChatMessage _contentBase = new Models.ChatMessage();
+
+                _contentBase.Username = username;
+                _contentBase.Color = color;
+                _contentBase.Badges = badges;
+                _contentBase.Message = message;
+
+                ViewModels.ChatMessage _contentView = new ViewModels.ChatMessage(_contentBase);
+                chatBox.Items.Add(_contentView);
         }
 
 
