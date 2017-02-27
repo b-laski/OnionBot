@@ -45,7 +45,7 @@ namespace OnionBot.Models
             get { return _message; }
             set
             {
-                _message = value;
+                _message = ": " + value;
                 OnPropertyChanged("Message");
             }
         }

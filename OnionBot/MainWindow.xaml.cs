@@ -32,7 +32,7 @@ namespace OnionBot
         #region MainWindow
         private void btnCloseApp_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(1);
+            this.Close();
         }
 
         private void Grid_MouseMove(object sender, MouseEventArgs e)

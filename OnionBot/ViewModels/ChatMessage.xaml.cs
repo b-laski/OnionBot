@@ -56,6 +56,7 @@ namespace OnionBot.ViewModels
                             iconPanel.Children.Add(new MaterialDesignThemes.Wpf.PackIcon
                             {
                                 Height = 16,
+                                Width = 16,
                                 HorizontalAlignment = HorizontalAlignment.Center,
                                 VerticalAlignment = VerticalAlignment.Center,
                                 Kind = MaterialDesignThemes.Wpf.PackIconKind.Camera,
@@ -70,6 +71,7 @@ namespace OnionBot.ViewModels
                             iconPanel.Children.Add(new MaterialDesignThemes.Wpf.PackIcon
                             {
                                 Height = 16,
+                                Width = 16,
                                 HorizontalAlignment = HorizontalAlignment.Center,
                                 VerticalAlignment = VerticalAlignment.Center,
                                 Kind = MaterialDesignThemes.Wpf.PackIconKind.Wrench,
@@ -82,6 +84,7 @@ namespace OnionBot.ViewModels
                             iconPanel.Children.Add(new MaterialDesignThemes.Wpf.PackIcon
                             {
                                 Height = 16,
+                                Width = 16,
                                 HorizontalAlignment = HorizontalAlignment.Center,
                                 VerticalAlignment = VerticalAlignment.Center,
                                 Kind = MaterialDesignThemes.Wpf.PackIconKind.Star,
@@ -94,6 +97,7 @@ namespace OnionBot.ViewModels
                             iconPanel.Children.Add(new MaterialDesignThemes.Wpf.PackIcon
                             {
                                 Height = 16,
+                                Width = 16,
                                 HorizontalAlignment = HorizontalAlignment.Center,
                                 VerticalAlignment = VerticalAlignment.Center,
                                 Kind = MaterialDesignThemes.Wpf.PackIconKind.Cake,
@@ -106,6 +110,7 @@ namespace OnionBot.ViewModels
                             iconPanel.Children.Add(new MaterialDesignThemes.Wpf.PackIcon
                             {
                                 Height = 16,
+                                Width = 16,
                                 HorizontalAlignment = HorizontalAlignment.Center,
                                 VerticalAlignment = VerticalAlignment.Center,
                                 Kind = MaterialDesignThemes.Wpf.PackIconKind.Sword,
@@ -118,6 +123,7 @@ namespace OnionBot.ViewModels
                             iconPanel.Children.Add(new MaterialDesignThemes.Wpf.PackIcon
                             {
                                 Height = 16,
+                                Width = 16,
                                 HorizontalAlignment = HorizontalAlignment.Center,
                                 VerticalAlignment = VerticalAlignment.Center,
                                 Kind = MaterialDesignThemes.Wpf.PackIconKind.Camera,
@@ -130,6 +136,7 @@ namespace OnionBot.ViewModels
                             iconPanel.Children.Add(new MaterialDesignThemes.Wpf.PackIcon
                             {
                                 Height = 16,
+                                Width = 16,
                                 HorizontalAlignment = HorizontalAlignment.Center,
                                 VerticalAlignment = VerticalAlignment.Center,
                                 Kind = MaterialDesignThemes.Wpf.PackIconKind.BatteryCharging,
@@ -142,6 +149,7 @@ namespace OnionBot.ViewModels
                             iconPanel.Children.Add(new MaterialDesignThemes.Wpf.PackIcon
                             {
                                 Height = 16,
+                                Width = 16,
                                 HorizontalAlignment = HorizontalAlignment.Center,
                                 VerticalAlignment = VerticalAlignment.Center,
                                 Kind = MaterialDesignThemes.Wpf.PackIconKind.Crown,
@@ -149,10 +157,24 @@ namespace OnionBot.ViewModels
                                 Margin = new Thickness(2, 0, 2, 0)
                             });
                         }
+                        else if (_badge.Key.Contains("bot"))
+                        {
+                            iconPanel.Children.Add(new MaterialDesignThemes.Wpf.PackIcon
+                            {
+                                Height = 16,
+                                Width = 16,
+                                HorizontalAlignment = HorizontalAlignment.Center,
+                                VerticalAlignment = VerticalAlignment.Center,
+                                Kind = MaterialDesignThemes.Wpf.PackIconKind.Android,
+                                Foreground = Brushes.Purple,
+                                Margin = new Thickness(2, 0, 2, 0)
+                            });
+                        }
                     }
                 }
                 catch (Exception e)
                 {
+                    MessageBox.Show(e.ToString());
                 }
             }
         }

@@ -34,7 +34,7 @@ namespace OnionBot.Libs
                 }
                 else
                 {
-                    throw new Exception("Token is setup!");
+                    throw new Exception("SORKA ZJEBALES!");
                 }
             }
         }

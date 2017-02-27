@@ -132,8 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Libs\BotInformation.cs" />
     <Compile Include="Libs\OAuth.cs" />
     <Compile Include="Models\ChatMessage.cs" />
+    <Compile Include="Models\InformationMessage.cs" />
     <Compile Include="UserControls\Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
@@ -181,6 +183,9 @@
     </Compile>
     <Compile Include="ViewModels\ChatMessage.xaml.cs">
       <DependentUpon>ChatMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MessageInformation.xaml.cs">
+      <DependentUpon>MessageInformation.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -255,6 +260,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewModels\ChatMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\MessageInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

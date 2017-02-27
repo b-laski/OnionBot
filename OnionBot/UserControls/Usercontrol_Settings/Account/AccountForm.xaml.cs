@@ -31,8 +31,13 @@ namespace OnionBot.UserControls.Usercontrol_Settings.Account
         {
             TwitchLogin loginWindow = new TwitchLogin();
             loginWindow.Show();
+            ConnectGrid.Visibility = Visibility.Collapsed;
+            loginWindow.Closed += LoginWindow_Closed;
         }
 
-
+        private void LoginWindow_Closed(object sender, EventArgs e)
+        {
+            userGrid.Visibility = Visibility.Visible;
+        }
     }
 }

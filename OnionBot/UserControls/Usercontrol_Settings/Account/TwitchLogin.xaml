@@ -18,7 +18,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="{DynamicResource PrimaryHueDarkBrush}">
-            <Button Height="auto" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right" Click="btnCloseApp_Click">
+            <Button x:Name="btnCloseWindow" Height="auto" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right" Click="btnCloseApp_Click">
                 <material:PackIcon Kind="Close" VerticalAlignment="Center" HorizontalAlignment="Center" />
             </Button>
         </Grid>

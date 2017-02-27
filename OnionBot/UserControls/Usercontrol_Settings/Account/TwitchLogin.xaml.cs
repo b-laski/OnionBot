@@ -38,7 +38,6 @@ namespace OnionBot.UserControls.Usercontrol_Settings.Account
             {
                 string[] _tokenSep = new string[] { "=", "&" };
                 Libs.OAuth.OAuthToken = ((e.Url).Split(_tokenSep, StringSplitOptions.None)[1]);
-                MessageBox.Show(Libs.OAuth.OAuthToken);
             }
             else if (e.Url.Contains("?error="))
             {
