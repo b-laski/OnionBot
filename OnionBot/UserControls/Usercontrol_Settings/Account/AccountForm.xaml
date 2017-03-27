@@ -34,7 +34,7 @@
             </Button>
         </Grid>
         <Grid x:Name="userGrid" Grid.Row="1" Visibility="Collapsed">
-            <Label Content="KURWA DZIALA XD" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="DZIALA XD" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
     </Grid>
 </UserControl>
